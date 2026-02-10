@@ -8,5 +8,5 @@ import { Project } from '../../models/project.model';
   styleUrl: './project-card.css',
 })
 export class ProjectCard {
-
+  project!: Project;
 }

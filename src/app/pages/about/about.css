@@ -1,0 +1,39 @@
+.sobre-card {
+  background: rgba(0, 255, 255, 0.06);
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 0;
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(0, 200, 255, 0.15);
+  color: #dffaff;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.75;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.sobre-title {
+  font-family: "Syncopate", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.18em;
+  margin-bottom: 25px;
+  color: #8cf9ff;
+  text-transform: uppercase;
+}
+
+.sobre-card p {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  color: #d7f9ff;
+}
+
+.sobre-card .tecnologias {
+  color: #9af4ff;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .sobre-title { font-size: 1.3rem; }
+  .sobre-card p { font-size: 1rem; }
+}

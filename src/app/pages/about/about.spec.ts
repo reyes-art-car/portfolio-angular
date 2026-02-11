@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Navbar } from './navbar';
+import { About } from './about';
 
-describe('Navbar', () => {
-  let component: Navbar;
-  let fixture: ComponentFixture<Navbar>;
+describe('About', () => {
+  let component: About;
+  let fixture: ComponentFixture<About>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Navbar]
+      imports: [About]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Navbar);
+    fixture = TestBed.createComponent(About);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -21,5 +21,3 @@ describe('Navbar', () => {
     expect(component).toBeTruthy();
   });
 });
-
-

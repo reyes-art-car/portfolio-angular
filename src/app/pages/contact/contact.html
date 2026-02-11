@@ -7,8 +7,8 @@
         ¿Te interesa colaborar o tienes una propuesta? Envíame un mensaje y responderé lo antes posible.
       </p>
 
-      <div *ngIf="status === 'sent'" class="alert alert-success">
-        Mensaje enviado correctamente (simulado). ¡Gracias!
+      <div class="alert alert-success">
+        Si el formulario es válido, se mostrará confirmación en consola (envío simulado).
       </div>
 
       <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="card p-4 shadow-sm">
@@ -45,7 +45,12 @@
             <select id="reason" class="form-select"
                     formControlName="reason"
                     [class.is-invalid]="isInvalid('reason')">
-              <option *ngFor="let r of reasons" [value]="r">{{ r }}</option>
+
+              <option value="Trabajo">Trabajo</option>
+              <option value="Colaboración">Colaboración</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Otro">Otro</option>
+
             </select>
             <div class="invalid-feedback">{{ getError('reason') }}</div>
           </div>
@@ -64,7 +69,7 @@
               </small>
             </div>
 
-            <div *ngIf="isInvalid('message')" class="text-danger small mt-1">
+            <div class="text-danger small mt-1">
               {{ getError('message') }}
             </div>
           </div>
@@ -85,8 +90,7 @@
             <button class="btn btn-dark"
                     type="submit"
                     [disabled]="status === 'sending'">
-              <span *ngIf="status !== 'sending'">Enviar</span>
-              <span *ngIf="status === 'sending'">Enviando…</span>
+              Enviar
             </button>
 
             <button class="btn btn-outline-secondary"
@@ -96,8 +100,8 @@
               Limpiar
             </button>
           </div>
-        </div>
 
+        </div>
       </form>
 
     </div>

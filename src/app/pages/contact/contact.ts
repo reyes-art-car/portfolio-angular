@@ -15,6 +15,12 @@ export class Contact {
 
   reasons: ContactReason[] = ['Trabajo', 'Colaboración', 'Consulta', 'Otro'];
 
+  linkedinUrl = 'www.linkedin.com/in/maria-reyes-a-carrero';
+githubUrl = 'https://github.com/reyes-art-car';
+email = 'mariareyesartcar@gmail.com';
+location = 'Sevilla, España';
+
+
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],

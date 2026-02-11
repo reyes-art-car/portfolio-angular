@@ -1,0 +1,31 @@
+.contact-form { max-width: 720px; }
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.form-label {
+  font-weight: 700;
+  color: #f5f5ff;
+  letter-spacing: 0.2px;
+}
+
+.form-control {
+  background: #0d102c;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(77,208,255,.35);
+}
+
+.form-check-input { accent-color: var(--accent-2); }
+.form-check-label { color: var(--muted); }

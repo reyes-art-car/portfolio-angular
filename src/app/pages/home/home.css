@@ -1,0 +1,74 @@
+/* Nombre + subtítulo */
+.nombre {
+  font-family: "Syncopate", sans-serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #e4f0ff;
+  margin: 0 0 10px;
+}
+
+.subtitulo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  color: #b9c7ff;
+  margin-bottom: 25px;
+}
+
+/* CV card */
+.cv-card { text-align: center; }
+
+.btn-cv {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0,255,255,0.45);
+  color: #bffcff;
+  font-family: "Syncopate", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 12px 28px;
+  display: inline-block;
+  border-radius: 0;
+  transition: 0.3s ease;
+}
+
+.btn-cv:hover {
+  background: rgba(0,255,255,0.3);
+  border-color: rgba(0,255,255,0.9);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.6);
+  transform: translateY(-2px);
+}
+
+/* Stickers */
+.sticker-img {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.sticker-img img {
+  width: 130px;
+  height: auto;
+  background: none;
+  filter: drop-shadow(0 0 10px rgba(129, 140, 248, 0.6));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.sticker-img:hover img {
+  transform: translateY(-6px) scale(1.05);
+  filter: drop-shadow(0 0 18px rgba(96, 165, 250, 0.9));
+}
+
+.stickers-sobre-mi h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.05em;
+  color: #e0ecff;
+  margin-bottom: 40px;
+  text-transform: none;
+}

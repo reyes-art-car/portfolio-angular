@@ -1,1 +1,115 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* 1. VARIABLES Y RESET                                   */
+
+
+:root {
+  --bg: #050819;
+  --panel: #111433;
+  --panel-2: #181a3f;
+
+  --text: #f5f5ff;
+  --muted: #b7c1e6;
+
+  --accent: #7b5cff;
+  --accent-2: #4dd0ff;
+  --border: #272a55;
+
+  --blue-deep: #0b1a3a;
+  --blue-electric: #2979ff;
+  --blue-cyan: #4dd0ff;
+  --blue-indigo: #1e1b4b;
+  --blue-ice: #8ecaff;
+  --blue-soft: #6ea5ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(41,121,255,0.35) 0%, transparent 60%),
+    radial-gradient(900px 500px at 98% 12%, rgba(77,208,255,0.30) 0%, transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.muted { color: var(--muted); }
+
+
+/* 3. CARDS / BLOQUES DE CONTENIDO              */
+
+.card {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: 0 0 18px rgba(41,121,255,.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px rgba(2,6,23,0.65);
+}
+
+.card-mrac {
+  background: rgba(0, 40, 80, 0.5);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 0;
+  padding: 28px 24px;
+  box-shadow:
+    0 0 18px rgba(0, 200, 255, 0.2),
+    0 0 40px rgba(15, 23, 42, 0.9);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #e8f7ff;
+  margin-bottom: 32px;
+}
+
+.card-mrac p {
+  line-height: 1.8;
+  font-size: 1.02rem;
+  color: #d5ecff;
+}
+
+/* Botón MRAC  */
+.btn-mrac {
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0,255,255,0.4);
+  color: #bffcff;
+  font-family: "Syncopate", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 10px 22px;
+  border-radius: 0;
+  transition: 0.3s ease;
+}
+
+.btn-mrac:hover {
+  background: rgba(0,255,255,0.3);
+  border-color: rgba(0,255,255,0.75);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+/* 9. ANIMACIONES                           */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 10. RESPONSIVE                         */
+
+@media (max-width: 768px) {
+  .card { margin: 14px 0; }
+}

@@ -1,46 +1,32 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark custom-navbar">
-  <div class="container justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-portfolio">
+  <div class="container">
 
-    <a class="navbar-brand" routerLink="/home">Portfolio</a>
+    <a class="navbar-brand" routerLink="/">Reyes Backend Jr</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
-      aria-expanded="false" aria-label="Abrir menú de navegación" title="Abrir menú">
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMain"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
-    <div class="collapse navbar-collapse justify-content-center" id="nav">
-      <ul class="navbar-nav custom-nav-ul">
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
+          <a class="nav-link" routerLink="/">Inicio</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">Sobre mí</a>
+          <a class="nav-link" routerLink="/portfolio">Proyectos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" fragment="formacion">
-            Formación
-          </a>
-        </li>
-
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">Proyectos</a>
+          <a class="nav-link" routerLink="/about">Sobre mí</a>
         </li>
-
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contacto</a>
-        </li>
-
-        <!-- Botón tema como item del navbar (para que se alinee bien) -->
-        <li class="nav-item d-flex align-items-center ms-md-3 mt-2 mt-md-0">
-          <button class="btn btn-outline-light btn-sm" type="button" (click)="toggleTheme()"
-            [attr.aria-label]="'Cambiar tema. Tema actual: ' + theme" title="Cambiar tema">
-            Tema: {{ theme }}
-          </button>
+          <a class="nav-link" routerLink="/contact">Contacto</a>
         </li>
 
       </ul>

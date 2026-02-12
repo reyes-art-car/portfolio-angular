@@ -1,34 +1,40 @@
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-10">
+<header class="hero">
+  <div class="container text-center py-4">
+    <h1 class="nombre">REYES ARTACHO CARRERO</h1>
+    <p class="subtitulo">Estudiante de Desarrollo de Aplicaciones Web</p>
+  </div>
+</header>
 
-      <header class="mb-4 text-center">
-        <h1 class="section-title">Proyectos</h1>
-        <p class="muted mb-0">
-          Una selección de proyectos donde aplico Angular, TypeScript, APIs y buenas prácticas.
-        </p>
-      </header>
+<!-- SOBRE MÍ stickers -->
+<section class="stickers-sobre-mi container my-5">
+  <h2 class="text-center mb-4">Un poco sobre mí</h2>
+  <p class="text-center">
+    Pasa el ratón por encima de cada imagen para saber más sobre mí.
+  </p>
 
-      <div class="row g-4">
+  <div class="d-flex justify-content-center flex-wrap gap-4">
+    <button type="button"
+            class="sticker-img"
+            title="Como una mariposa, trato con delicadeza cada proyecto.">
+      <img src="assets/images/mariposa.png" alt="Mariposa azul">
+    </button>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <app-project-card [project]="chefpro"></app-project-card>
-        </div>
+    <button type="button"
+            class="sticker-img"
+            title="Avanzo con paciencia y perseverancia.">
+      <img src="assets/images/tortuga.png" alt="Tortuga">
+    </button>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <app-project-card [project]="aetasHistoria"></app-project-card>
-        </div>
+    <button type="button"
+            class="sticker-img"
+            title="Aporto creatividad e ideas nuevas.">
+      <img src="assets/images/jazmin.png" alt="Jazmín">
+    </button>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <app-project-card [project]="nctEspana"></app-project-card>
-        </div>
-
-      </div>
-
-      <div class="text-center mt-4">
-        <a routerLink="/home" class="btn btn-primary">Volver al inicio</a>
-      </div>
-
-    </div>
+    <button type="button"
+            class="sticker-img"
+            title="Busco impacto social en los proyectos.">
+      <img src="assets/images/corazon.png" alt="Corazón">
+    </button>
   </div>
 </section>

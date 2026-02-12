@@ -1,7 +1,8 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
-/* 1. VARIABLES Y RESET                                   */
 
-
+/* 1. VARIABLES Y RESET */
 :root {
   --bg: #050819;
   --panel: #111433;
@@ -24,11 +25,15 @@
 
 * { box-sizing: border-box; }
 
+html, body { height: 100%; }
+
 body {
   margin: 0;
   padding: 0;
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+
   background:
     radial-gradient(1200px 600px at 12% -10%, rgba(41,121,255,0.35) 0%, transparent 60%),
     radial-gradient(900px 500px at 98% 12%, rgba(77,208,255,0.30) 0%, transparent 70%),
@@ -36,10 +41,63 @@ body {
   background-attachment: fixed;
 }
 
+img { max-width: 100%; height: auto; display: block; }
+
 .muted { color: var(--muted); }
 
+/* 2. LAYOUT GLOBAL (esto es lo que te faltaba) */
 
-/* 3. CARDS / BLOQUES DE CONTENIDO              */
+/* Contenedor centrado (evita “todo a la izquierda”) */
+.container {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+/* Grid general: menú + contenido */
+.page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.nav {
+  position: sticky;
+  top: 16px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(17, 20, 51, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav a:hover {
+  background: rgba(77, 208, 255, 0.12);
+  transform: translateX(2px);
+}
+
+.main {
+  min-width: 0; /* evita overflow en grid */
+}
+
+/* 3. CARDS / BLOQUES DE CONTENIDO */
 
 .card {
   background: var(--panel-2);
@@ -67,7 +125,7 @@ body {
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: #e8f7ff;
-  margin-bottom: 32px;
+  margin: 0 0 32px 0;
 }
 
 .card-mrac p {
@@ -76,7 +134,7 @@ body {
   color: #d5ecff;
 }
 
-/* Botón MRAC  */
+/* Botón MRAC */
 .btn-mrac {
   background: rgba(0, 255, 255, 0.15);
   border: 1px solid rgba(0,255,255,0.4);
@@ -96,7 +154,7 @@ body {
   box-shadow: 0 0 20px rgba(0,255,255,0.6);
 }
 
-/* 9. ANIMACIONES                           */
+/* 9. ANIMACIONES */
 
 .fade-in {
   opacity: 0;
@@ -108,8 +166,20 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* 10. RESPONSIVE                         */
+/* 10. RESPONSIVE */
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .nav {
+    position: static;
+  }
+}
 
 @media (max-width: 768px) {
+  .container { width: min(1120px, 94vw); }
   .card { margin: 14px 0; }
 }

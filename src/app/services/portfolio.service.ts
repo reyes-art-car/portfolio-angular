@@ -12,7 +12,7 @@ export class PortfolioService {
         id: 1,
         title: 'Portfolio Bootstrap',
         description: 'Primer portfolio realizado con Bootstrap.',
-        imageUrl: 'assets/img/p1.jpg',
+        imageUrl: 'assets/images/p1.jpg',
         repoUrl: 'https://github.com/reyes-art-car/proyecto-portfolio',
         tags: ['Bootstrap', 'HTML', 'CSS']
       },
@@ -21,7 +21,7 @@ export class PortfolioService {
         ,
         title: 'Portfolio Angular',
         description: 'Migración a SPA con Angular y routing.',
-        imageUrl: 'assets/img/p2.jpg',
+        imageUrl: 'assets/images/p2.jpg',
         repoUrl: 'https://github.com/reyes-art-car/portfolio-angular',
         tags: ['Angular', 'TypeScript'],
       }

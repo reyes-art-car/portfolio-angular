@@ -13,6 +13,7 @@ import { Project } from '../../models/project.model';
 export class Portfolio {
 
   chefpro: Project = {
+    id: 1,
     title: 'ChefPro',
     description:
       'Plataforma full-stack para reserva de menús y servicios de chefs. Backend en Spring Boot y frontend en Angular con APIs REST y autenticación.',
@@ -22,6 +23,7 @@ export class Portfolio {
   };
 
   aetasHistoria: Project = {
+    id: 2,
     title: 'Aetas Historia',
     description:
       'Aplicación Java con Swing para crear, editar y eliminar documentos históricos.',
@@ -31,6 +33,7 @@ export class Portfolio {
   };
 
   nctEspana: Project = {
+    id: 3,
     title: 'NCT España',
     description:
       'Aplicación web para la fanbase de NCT en España desarrollada con HTML y CSS.',

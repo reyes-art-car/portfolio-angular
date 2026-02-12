@@ -10,7 +10,7 @@ export class ThemeService {
   constructor(private storage: StorageService) {}
 
   getTheme(): Theme {
-    return this.storage.get<Theme>(THEME_KEY) ?? 'light';
+return (this.storage.get(THEME_KEY) as Theme | null) ?? 'light';
   }
 
   setTheme(theme: Theme): void {

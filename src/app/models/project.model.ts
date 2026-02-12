@@ -1,10 +1,10 @@
 export interface Project {
-  id: string;
+  id: number;
   title: string;
   description: string;
   imageUrl: string;
-  repoUrl?: string;
-  demoUrl?: string;
   tags: string[];
-  createdAt: string;
+  link?: string;
+  repoUrl?: string;
 }
+

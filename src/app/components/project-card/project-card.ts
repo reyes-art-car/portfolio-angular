@@ -10,7 +10,5 @@ import { TruncatePipe } from '../../pipes/truncate-pipe';
   styleUrl: './project-card.css',
 })
 export class ProjectCard {
-
   @Input() project!: Project;
-
 }

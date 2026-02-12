@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
 
 type ContactReason = 'Trabajo' | 'Colaboración' | 'Consulta' | 'Otro';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.html'
 })
 export class Contact {

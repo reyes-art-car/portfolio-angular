@@ -1,0 +1,110 @@
+
+
+/* Enlace "Ver todos" */
+.ver-todos {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ver-todos:hover {
+  color: #ffffff;
+}
+
+/* Wrapper tabla */
+.table-wrapper {
+  background: #10102f;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* Tabla proyectos */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 660px;
+}
+
+.projects-table caption {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.projects-table thead th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d8d8ff;
+  background: #161744;
+}
+
+
+.projects-table th {
+  color: #bfe8ff !important;
+  letter-spacing: 0.1em;
+}
+
+.projects-table td {
+  color: #e8f7ff !important;
+  font-size: 0.95rem;
+}
+
+.projects-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.projects-table tbody tr:hover {
+  background: rgba(0, 200, 255, 0.12) !important;
+}
+
+/* Botón Abrir */
+.play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+
+  background: rgba(0, 255, 255, 0.12);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  color: #c9f9ff !important;
+
+  transition: 0.3s ease;
+}
+
+.play::before {
+  content: "▶";
+  color: var(--accent-2);
+}
+
+.play:hover {
+  background: rgba(0, 255, 255, 0.25);
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+}
+
+/* Card proyectos centrada */
+.card-mrac.proyectos-card {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 30px 28px;
+}
+
+/* RESPONSIVE                                              */
+
+@media (max-width: 680px) {
+  .projects-table {
+    min-width: 540px;
+  }
+}

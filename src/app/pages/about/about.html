@@ -1,8 +1,4 @@
-
-
-<body class="tidal-theme">
-
-  <main class="container my-5">
+<main class="container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
 
@@ -28,16 +24,61 @@
           <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Angular, Java/Spring Boot, SQL y Git.
         </p>
 
-        <a href="index.html" class="btn btn-mrac mt-3">Volver al inicio</a>
+        <a routerLink="/home" class="btn btn-mrac mt-3">Volver al inicio</a>
       </article>
 
     </div>
   </div>
 </main>
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
 
-<section id="formacion" class="mt-5">
+      <article class="card-mrac cv-card text-center">
+        <h2 class="section-title">Currículum</h2>
+
+        <p>
+          Puedes consultar mi currículum completo en PDF.
+        </p>
+
+        <a href="doc/CV_Maria_Reyes_Artacho_Carrero.pdf"
+           class="btn btn-cv mt-3"
+           target="_blank"
+           rel="noopener">
+          Ver currículum (PDF)
+        </a>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+<section class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+
+      <article class="card-mrac text-center p-4">
+        <h2 class="section-title">Vídeo de presentación</h2>
+
+        <div class="ratio ratio-16x9 mt-3">
+          <video controls preload="metadata" poster="img/Portada-video.png">
+            <source src="video/presentacion.webm" type="video/webm">
+            <source src="video/presentacion.mp4" type="video/mp4">
+            <source src="video/presentacion.ogv" type="video/ogg">
+            Tu navegador no soporta el elemento de vídeo.
+          </video>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="formacion" class="container my-5">
   <h2 class="section-title">Formación</h2>
- <section class="card-mrac">
+
+  <section class="card-mrac">
     <h2 class="section-title">Certificaciones y habilidades técnicas</h2>
 
     <div class="row g-4">
@@ -115,9 +156,3 @@
     </div>
   </section>
 </section>
-
-
-
-
-
-

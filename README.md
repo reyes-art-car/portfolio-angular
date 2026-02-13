@@ -9,8 +9,9 @@ Portfolio profesional desarrollado en Angular como proyecto DAW.
 - Bootstrap
 - Routing
 - Standalone components
-
 ## Estructura del proyecto
+
+```text
 portfolio-angular/
 ├─ public/
 │  └─ favicon.ico
@@ -47,7 +48,20 @@ portfolio-angular/
 │  ├─ index.html
 │  ├─ main.ts
 │  └─ styles.css
-└─ package.json
+├─ package.json
+```
+
+##  Arquitectura
+
+El proyecto está organizado por responsabilidades:
+
+- **pages/** → vistas principales (Home, About, Contact, Portfolio)
+- **components/** → componentes reutilizables
+- **shared/** → elementos de layout comunes (navbar, footer)
+- **services/** → acceso a datos de proyectos
+- **models/** → tipado de datos
+- **pipes/** → transformaciones de texto
+
 
 ## Funcionalidades
 - Sección formación

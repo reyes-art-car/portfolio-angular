@@ -1,59 +1,82 @@
-# PortfolioAngular
+# Portfolio Angular — María Reyes Artacho Carrero
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+## Objetivo
+Portfolio profesional desarrollado en Angular como proyecto DAW.
 
-## Development server
+## Tecnologías
+- Angular
+- TypeScript
+- Bootstrap
+- Routing
+- Standalone components
+## Estructura del proyecto
 
-To start a local development server, run:
-
-```bash
-ng serve
+```text
+portfolio-angular/
+├─ public/
+│  └─ favicon.ico
+├─ src/
+│  ├─ app/
+│  │  ├─ components/
+│  │  │  └─ project-card/
+│  │  │     ├─ project-card.ts
+│  │  │     ├─ project-card.html
+│  │  │     └─ project-card.css
+│  │  ├─ models/
+│  │  │  └─ project.model.ts
+│  │  ├─ pages/
+│  │  │  ├─ home/
+│  │  │  ├─ about/
+│  │  │  ├─ contact/
+│  │  │  └─ portfolio/
+│  │  ├─ pipes/
+│  │  │  └─ truncate-pipe.ts
+│  │  ├─ services/
+│  │  │  └─ portfolio.service.ts
+│  │  ├─ shared/
+│  │  │  ├─ navbar/
+│  │  │  └─ footer/
+│  │  ├─ app.config.ts
+│  │  ├─ app.routes.ts
+│  │  ├─ app.html
+│  │  ├─ app.css
+│  │  └─ app.ts
+│  ├─ assets/
+│  │  ├─ doc/
+│  │  ├─ images/
+│  │  └─ video/
+│  ├─ index.html
+│  ├─ main.ts
+│  └─ styles.css
+├─ package.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+##  Arquitectura
 
-## Code scaffolding
+El proyecto está organizado por responsabilidades:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **pages/** → vistas principales (Home, About, Contact, Portfolio)
+- **components/** → componentes reutilizables
+- **shared/** → elementos de layout comunes (navbar, footer)
+- **services/** → acceso a datos de proyectos
+- **models/** → tipado de datos
+- **pipes/** → transformaciones de texto
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Funcionalidades
+- Sección formación
+- Sección proyectos
+- Descarga de CV
+- Formulario de contacto validado
+- Diseño responsive
 
-```bash
-ng generate --help
-```
+## Cómo ejecutar
+- npm install
+- ng serve
 
-## Building
+## Autora
+María Reyes Artacho Carrero
 
-To build the project run:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

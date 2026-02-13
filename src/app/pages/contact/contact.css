@@ -1,31 +1,65 @@
-.contact-form { max-width: 720px; }
+/* CONTACTO */
 
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 14px;
+#contacto .section-title{
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
-.form-label {
-  font-weight: 700;
-  color: #f5f5ff;
-  letter-spacing: 0.2px;
+#contacto .req{
+  color: #ff6b6b;
+  font-weight: 800;
 }
 
-.form-control {
-  background: #0d102c;
-  border: 1px solid var(--border);
+/* Caja del formulario (similar a tu portfolio anterior) */
+#contacto .contact-wrap{
+  background: rgba(17, 20, 51, 0.55);
+  border: 1px solid rgba(39, 42, 85, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.35);
+}
+
+/* Labels legibles */
+#contacto .form-label{
+  color: var(--blue-ice);
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+#contacto .form-control,
+#contacto .form-select{
+  background: rgba(5, 8, 25, 0.45);
+  border: 1px solid rgba(39, 42, 85, 0.95);
   color: var(--text);
-  padding: 12px 14px;
-  border-radius: 10px;
-  outline: none;
+  border-radius: 12px;
 }
 
-.form-control:focus {
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 3px rgba(77,208,255,.35);
+#contacto .form-control::placeholder{
+  color: rgba(183, 193, 230, 0.6);
 }
 
-.form-check-input { accent-color: var(--accent-2); }
-.form-check-label { color: var(--muted); }
+#contacto .form-control:focus,
+#contacto .form-select:focus{
+  border-color: rgba(77, 208, 255, 0.65);
+  box-shadow: 0 0 0 0.2rem rgba(77, 208, 255, 0.18);
+}
+
+/* Texto auxiliar */
+#contacto .form-text-muted{
+  color: rgba(183, 193, 230, 0.85);
+}
+
+/* Checkbox visible */
+#contacto .form-check-label{
+  color: rgba(183, 193, 230, 0.95);
+}
+
+#contacto .form-check-input{
+  background-color: rgba(5, 8, 25, 0.6);
+  border-color: rgba(183, 193, 230, 0.55);
+}
+
+#contacto .form-check-input:checked{
+  background-color: var(--blue-cyan);
+  border-color: var(--blue-cyan);
+}

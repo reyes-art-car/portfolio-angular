@@ -1,109 +1,61 @@
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-8">
+<section id="contacto" class="container my-5">
+  <h2 class="section-title mb-4">Contacto</h2>
 
-      <h2 class="mb-2">Contacto</h2>
-      <p class="text-muted mb-4">
-        ¿Te interesa colaborar o tienes una propuesta? Envíame un mensaje y responderé lo antes posible.
-      </p>
+  <div class="contact-wrap p-4 p-md-5">
+    <form class="row g-3" novalidate>
 
-      <div class="alert alert-success">
-        Si el formulario es válido, se mostrará confirmación en consola (envío simulado).
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="nombre">Nombre <span class="req">*</span></label>
+        <input id="nombre" type="text" class="form-control" placeholder="Tu nombre">
       </div>
 
-      <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="card p-4 shadow-sm">
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="email">Email <span class="req">*</span></label>
+        <input id="email" type="email" class="form-control" placeholder="nombre@dominio.com">
+      </div>
 
-        <div class="row g-3">
-          <div class="col-12 col-md-6">
-            <label class="form-label" for="name">Nombre *</label>
-            <input id="name" type="text" class="form-control"
-                   formControlName="name"
-                   [class.is-invalid]="isInvalid('name')">
-            <div class="invalid-feedback">{{ getError('name') }}</div>
-          </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="asunto">Asunto <span class="req">*</span></label>
+        <input id="asunto" type="text" class="form-control" placeholder="Ej.: Oferta de prácticas / Colaboración">
+      </div>
 
-          <div class="col-12 col-md-6">
-            <label class="form-label" for="email">Email *</label>
-            <input id="email" type="email" class="form-control"
-                   formControlName="email"
-                   placeholder="nombre@dominio.com"
-                   [class.is-invalid]="isInvalid('email')">
-            <div class="invalid-feedback">{{ getError('email') }}</div>
-          </div>
+      <div class="col-12 col-md-6">
+        <label class="form-label" for="motivo">Motivo <span class="req">*</span></label>
+        <select id="motivo" class="form-select">
+          <option value="Trabajo">Trabajo</option>
+          <option value="Colaboración">Colaboración</option>
+          <option value="Consulta">Consulta</option>
+        </select>
+      </div>
 
-          <div class="col-12 col-md-7">
-            <label class="form-label" for="subject">Asunto *</label>
-            <input id="subject" type="text" class="form-control"
-                   formControlName="subject"
-                   placeholder="Ej.: Oferta de prácticas / Colaboración"
-                   [class.is-invalid]="isInvalid('subject')">
-            <div class="invalid-feedback">{{ getError('subject') }}</div>
-          </div>
+      <div class="col-12">
+        <label class="form-label" for="mensaje">Mensaje <span class="req">*</span></label>
+        <textarea id="mensaje" class="form-control" rows="7"
+          placeholder="Cuéntame tu propuesta con el máximo detalle posible..."></textarea>
 
-          <div class="col-12 col-md-5">
-            <label class="form-label" for="reason">Motivo *</label>
-            <select id="reason" class="form-select"
-                    formControlName="reason"
-                    [class.is-invalid]="isInvalid('reason')">
-
-              <option value="Trabajo">Trabajo</option>
-              <option value="Colaboración">Colaboración</option>
-              <option value="Consulta">Consulta</option>
-              <option value="Otro">Otro</option>
-
-            </select>
-            <div class="invalid-feedback">{{ getError('reason') }}</div>
-          </div>
-
-          <div class="col-12">
-            <label class="form-label" for="message">Mensaje *</label>
-            <textarea id="message" rows="6" class="form-control"
-                      formControlName="message"
-                      placeholder="Cuéntame tu propuesta con el máximo detalle posible…"
-                      [class.is-invalid]="isInvalid('message')"></textarea>
-
-            <div class="d-flex justify-content-between mt-1">
-              <small class="text-muted">Mínimo 20 caracteres.</small>
-              <small class="text-muted">
-                {{ (form.get('message')?.value?.length || 0) }} / 800
-              </small>
-            </div>
-
-            <div class="text-danger small mt-1">
-              {{ getError('message') }}
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="form-check">
-              <input id="accept" class="form-check-input" type="checkbox"
-                     formControlName="accept"
-                     [class.is-invalid]="isInvalid('accept')">
-              <label class="form-check-label" for="accept">
-                Acepto que este formulario es de demostración (no envía emails reales).
-              </label>
-              <div class="invalid-feedback">{{ getError('accept') }}</div>
-            </div>
-          </div>
-
-          <div class="col-12 d-flex gap-2">
-            <button class="btn btn-dark"
-                    type="submit"
-                    [disabled]="status === 'sending'">
-              Enviar
-            </button>
-
-            <button class="btn btn-outline-secondary"
-                    type="button"
-                    [disabled]="status === 'sending'"
-                    (click)="form.reset({ reason: 'Trabajo', accept: false })">
-              Limpiar
-            </button>
-          </div>
-
+        <div class="d-flex justify-content-between mt-2">
+          <small class="form-text-muted">Mínimo 20 caracteres.</small>
+          <small class="form-text-muted">0 / 800</small>
         </div>
-      </form>
 
-    </div>
+        <!-- Ejemplo error -->
+        <div class="text-danger mt-2">Este campo es obligatorio.</div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="demoCheck">
+          <label class="form-check-label" for="demoCheck">
+            Acepto que este formulario es de demostración (no envía emails reales).
+          </label>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary px-4">Enviar</button>
+        <button type="reset" class="btn btn-outline-light px-4">Limpiar</button>
+      </div>
+
+    </form>
   </div>
 </section>

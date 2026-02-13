@@ -1,32 +1,23 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from './storage';
 
-export type Theme = 'light' | 'dark';
-
-const THEME_KEY = 'pref_theme';
+type Theme = 'dark' | 'light';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  constructor(private storage: StorageService) {}
+  private readonly KEY = 'theme';
 
-  getTheme(): Theme {
-return (this.storage.get(THEME_KEY) as Theme | null) ?? 'light';
-  }
-
-  setTheme(theme: Theme): void {
-    this.storage.set(THEME_KEY, theme);
+  init() {
+    const saved = localStorage.getItem(this.KEY) as Theme | null;
+    const theme: Theme = saved ?? 'dark';
     document.documentElement.setAttribute('data-theme', theme);
   }
 
-  init(): Theme {
-    const theme = this.getTheme();
-    document.documentElement.setAttribute('data-theme', theme);
-    return theme;
-  }
+  toggle() {
+    const current =
+      (document.documentElement.getAttribute('data-theme') as Theme) ?? 'dark';
 
-  toggle(current: Theme): Theme {
-    const next: Theme = current === 'light' ? 'dark' : 'light';
-    this.setTheme(next);
-    return next;
+    const next: Theme = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem(this.KEY, next);
   }
 }

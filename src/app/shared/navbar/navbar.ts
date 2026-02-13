@@ -1,30 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../services/theme';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-type NavLink = {
-  path: string;
-  label: string;
-  exact?: boolean;
-};
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
+  private theme = inject(ThemeService);
 
-  links: NavLink[] = [
-    { path: '/', label: 'Inicio', exact: true },
-    { path: '/about', label: 'Sobre mí' },
-    { path: '/portfolio', label: 'Proyectos' },
-    { path: '/contact', label: 'Contacto' },
-  ];
-
-  trackByPath(_: number, item: NavLink) {
-    return item.path;
+  toggleTheme() {
+    this.theme.toggle();
   }
 }

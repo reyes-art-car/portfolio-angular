@@ -1,24 +1,30 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Theme, ThemeService } from '../../services/theme';
 
+type NavLink = {
+  path: string;
+  label: string;
+  exact?: boolean;
+};
 
 @Component({
-  standalone: true,
   selector: 'app-navbar',
-imports: [RouterLink, RouterLinkActive],
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  theme: Theme = 'light';
 
-  constructor(private themeService: ThemeService) {
-    this.theme = this.themeService.init();
-  }
+  links: NavLink[] = [
+    { path: '/', label: 'Inicio', exact: true },
+    { path: '/about', label: 'Sobre mí' },
+    { path: '/portfolio', label: 'Proyectos' },
+    { path: '/contact', label: 'Contacto' },
+  ];
 
-  toggleTheme(): void {
-    this.theme = this.themeService.toggle(this.theme);
+  trackByPath(_: number, item: NavLink) {
+    return item.path;
   }
 }
-

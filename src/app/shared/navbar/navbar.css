@@ -1,8 +1,5 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
 
-
-/* NAVBAR estilo portfolio original */
-
+/* NAVBAR estilo portfolio */
 .navbar-portfolio {
   background: rgba(11, 26, 58, 0.75);
   border-bottom: 1px solid var(--border);
@@ -10,6 +7,7 @@
   backdrop-filter: blur(8px);
 }
 
+/* Marca / logo */
 .navbar-portfolio .navbar-brand {
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -18,24 +16,33 @@
 
 .navbar-portfolio .navbar-brand:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px rgba(77,208,255,.6);
+  text-shadow: 0 0 10px rgba(77, 208, 255, 0.6);
 }
 
+/* Links */
 .navbar-portfolio .nav-link {
   color: var(--blue-ice);
   font-weight: 500;
   letter-spacing: 0.04em;
   margin-left: 12px;
   position: relative;
+  display: inline-block; /* mejora el ::after */
+  padding-bottom: 2px;   /* espacio para el subrayado */
   transition: 0.25s ease;
 }
 
 .navbar-portfolio .nav-link:hover {
   color: #ffffff;
-  text-shadow: 0 0 8px rgba(41,121,255,.6);
+  text-shadow: 0 0 8px rgba(41, 121, 255, 0.6);
 }
 
-/* Subrayado animado como en portfolios clásicos */
+/* Activo (routerLinkActive="active") */
+.navbar-portfolio .nav-link.active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(77, 208, 255, 0.45);
+}
+
+/* Subrayado animado */
 .navbar-portfolio .nav-link::after {
   content: "";
   position: absolute;
@@ -47,6 +54,24 @@
   transition: width 0.25s ease;
 }
 
-.navbar-portfolio .nav-link:hover::after {
+/* Hover y activo: subrayado visible */
+.navbar-portfolio .nav-link:hover::after,
+.navbar-portfolio .nav-link.active::after {
   width: 100%;
+}
+
+/* Móvil: que el menú desplegado no quede “apretado” */
+@media (max-width: 991.98px) {
+  .navbar-portfolio .navbar-nav {
+    padding-top: 10px;
+  }
+
+  .navbar-portfolio .nav-link {
+    margin-left: 0;
+    padding: 10px 0;
+  }
+
+  .navbar-portfolio .nav-link::after {
+    bottom: 2px; /* mejor en vertical */
+  }
 }

@@ -1,3 +1,5 @@
+/* ABOUT: SOBRE MÍ */
+
 .sobre-card {
   background: rgba(0, 255, 255, 0.06);
   border: 2px solid rgba(0, 255, 255, 0.4);
@@ -32,33 +34,46 @@
   color: #9af4ff;
   font-size: 0.95rem;
 }
-/*FORMACIÓN (sección) */
+
+
+/* ABOUT: FORMACIÓN */
 
 #formacion .section-title {
+  color: #ffffff;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   margin-bottom: 18px;
 }
 
-/* Tarjeta individual de cada skill */
-.cert-card {
-  height: 100%;
-  background: rgba(17, 20, 51, 0.55);
+/* Contenedor principal (tu card-mrac) */
+#formacion .card-mrac {
+  background: rgba(17, 20, 51, 0.70);
   border: 1px solid rgba(39, 42, 85, 0.95);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 0 22px rgba(41, 121, 255, 0.16);
+}
+
+/* Tarjeta individual de cada skill */
+#formacion .cert-card {
+  height: 100%;
+  background: rgba(5, 8, 25, 0.35);
+  border: 1px solid rgba(39, 42, 85, 0.85);
   border-radius: 16px;
   padding: 18px 16px;
-  box-shadow: 0 0 18px rgba(41,121,255,.12);
+  box-shadow: 0 0 18px rgba(41, 121, 255, 0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.cert-card:hover {
+#formacion .cert-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 30px rgba(2, 6, 23, 0.55);
-  border-color: rgba(77,208,255,0.45);
+  border-color: rgba(77, 208, 255, 0.45);
 }
 
-.cert-icons {
-  height: 120px;
+/* Iconos: tamaño uniforme y centrado */
+#formacion .cert-icons {
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,45 +81,44 @@
   margin-bottom: 10px;
 }
 
-
-.cert-icons img {
-  width: 110px;
-  height: 110px;
+#formacion .cert-icons img {
+  width: 74px;
+  height: 74px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 10px rgba(77,208,255,.15));
+  filter: drop-shadow(0 0 10px rgba(77, 208, 255, 0.15));
 }
 
-.cert-icons img:nth-child(2) {
-  width: 100px;
-  height: 100px;
-}
-
-.cert-card h3 {
+/* Título y texto legibles */
+#formacion .cert-card h3 {
+  color: #ffffff;
   margin: 6px 0 10px 0;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 800;
   letter-spacing: 0.02em;
 }
 
-.cert-card p {
+#formacion .cert-card p,
+#formacion .cert-card .muted {
+  color: rgba(183, 193, 230, 0.95);
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.7;
 }
 
+
+/* RESPONSIVE */
+
 @media (max-width: 576px) {
   .sobre-title { font-size: 1.3rem; }
   .sobre-card p { font-size: 1rem; }
-  .cert-icons {
-    height: 105px;
+
+  #formacion .cert-icons {
+    height: 96px;
   }
-  .cert-icons img {
-    width: 95px;
-    height: 95px;
-  }
-  .cert-icons img:nth-child(2) {
-    width: 88px;
-    height: 88px;
+
+  #formacion .cert-icons img {
+    width: 64px;
+    height: 64px;
   }
 }

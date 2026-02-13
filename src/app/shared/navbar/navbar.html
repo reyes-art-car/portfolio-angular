@@ -1,36 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-portfolio">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-mrac">
   <div class="container">
-
-    <a class="navbar-brand" routerLink="/">Reyes Backend Jr</a>
+    <a class="navbar-brand" routerLink="/">MRAC</a>
 
     <button class="navbar-toggler" type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navMain"
-            aria-label="Toggle navigation">
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Mostrar navegación">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navMain">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Inicio</a>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto gap-lg-2">
+        <li class="nav-item"
+            *ngFor="let l of links; trackBy: trackByPath">
+          <a class="nav-link"
+             [routerLink]="l.path"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: !!l.exact }">
+            {{ l.label }}
+          </a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/portfolio">Proyectos</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about">Sobre mí</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contacto</a>
-        </li>
-
       </ul>
     </div>
-
   </div>
 </nav>

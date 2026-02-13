@@ -76,98 +76,35 @@
   <h2 class="section-title">Formación</h2>
 
   <section class="card-mrac">
-    <h2 class="section-title">Certificaciones y habilidades técnicas</h2>
+    <h2 class="section-title">
+      Certificaciones y habilidades técnicas
+    </h2>
 
     <div class="row g-4">
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3"
+           *ngFor="let s of skills">
+
         <article class="cert-card h-100">
+
           <div class="cert-icons">
-            <img src="assets/images/html-5.png" alt="HTML5">
-            <img src="assets/images/css-3.png" alt="CSS3">
+            <img *ngFor="let ic of s.icons"
+                 [src]="ic"
+                 [alt]="s.title"
+                 [title]="s.title">
           </div>
-          <h3>HTML5 y CSS3</h3>
+
+          <h3>{{ s.title }}</h3>
+
           <p class="muted">
-            Formularios, tablas, imágenes, vídeos, audios, mapas, barra de navegación, footer, logo.
+            {{ s.desc }}
           </p>
-        </article>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/js.png" alt="JavaScript">
-          </div>
-          <h3>JavaScript</h3>
-          <p class="muted">DOM, eventos, funciones.</p>
         </article>
-      </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/bootstrap.png" alt="Bootstrap 5">
-          </div>
-          <h3>Bootstrap 5</h3>
-          <p class="muted">Componentes, grid, layout y responsive.</p>
-        </article>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/programing.png" alt="Angular">
-          </div>
-          <h3>Angular</h3>
-          <p class="muted">Componentes, servicios, rutas, pipes y directivas.</p>
-        </article>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/icons8-java.svg" alt="Java y Spring Boot">
-          </div>
-          <h3>Java y Spring Boot</h3>
-          <p class="muted">
-            Bucles, objetos, herencias, polimorfismo, encapsulación, arrays y ArrayList.
-            Actualmente cursando un curso de Spring Boot.
-          </p>
-        </article>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/api.png" alt="Postman y APIs REST">
-          </div>
-          <h3>Postman y APIs REST</h3>
-          <p class="muted">Funcionamiento de Postman y qué es una API.</p>
-        </article>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/icons8-oracle-logo.svg" alt="Oracle y MySQL">
-          </div>
-          <h3>Oracle y MySQL</h3>
-          <p class="muted">Lenguaje SQL y PL/SQL.</p>
-        </article>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <article class="cert-card h-100">
-          <div class="cert-icons">
-            <img src="assets/images/git.png" alt="Git y GitHub">
-          </div>
-          <h3>Git y GitHub</h3>
-          <p class="muted">Control de versiones y colaboración.</p>
-        </article>
       </div>
 
     </div>
   </section>
 </section>
-
 

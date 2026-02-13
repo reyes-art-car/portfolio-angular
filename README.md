@@ -18,8 +18,8 @@ Portfolio profesional desarrollado en Angular como proyecto DAW.
 - Diseño responsive
 
 ## Cómo ejecutar
-npm install
-ng serve
+- npm install
+- ng serve
 
 ## Autora
 María Reyes Artacho Carrero

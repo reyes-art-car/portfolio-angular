@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../services/portfolio.service';
 import { Project } from '../../models/project.model';
-
+import { TranslateService } from '../../services/translate.service';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,7 +11,7 @@ import { Project } from '../../models/project.model';
   styleUrl: './home.css',
 })
 export class Home {
-
+t = inject(TranslateService);
   private readonly portfolioService = inject(PortfolioService);
 
   projects: Project[] =

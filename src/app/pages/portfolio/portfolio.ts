@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { ProjectCard } from '../../components/project-card/project-card';
 import { Project } from '../../models/project.model';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterLink, ProjectCard],
+  imports: [CommonModule, ProjectCard],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.css',
 })
 export class Portfolio {
+  t= inject(TranslateService);
 
   projects: Project[] = [
     {

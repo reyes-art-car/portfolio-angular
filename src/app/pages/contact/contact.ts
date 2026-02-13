@@ -1,26 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
-
+import { TranslateService } from '../../services/translate.service';
+import { CommonModule } from '@angular/common';
 type ContactReason = 'Trabajo' | 'Colaboración' | 'Consulta' | 'Otro';
 
 @Component({
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact.html'
 })
 export class Contact {
+  t = inject(TranslateService);
   status: 'idle' | 'sending' | 'sent' = 'idle';
   form!: FormGroup;
 
   reasons: ContactReason[] = ['Trabajo', 'Colaboración', 'Consulta', 'Otro'];
 
   linkedinUrl = 'www.linkedin.com/in/maria-reyes-a-carrero';
-githubUrl = 'https://github.com/reyes-art-car';
-email = 'mariareyesartcar@gmail.com';
-location = 'Sevilla, España';
+  githubUrl = 'https://github.com/reyes-art-car';
+  email = 'mariareyesartcar@gmail.com';
+  location = 'Sevilla, España';
 
+  private fb = inject(FormBuilder);
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(120)]],
@@ -41,7 +44,6 @@ location = 'Sevilla, España';
 
     this.status = 'sending';
 
-    // Envío simulado (queda profesional)
     setTimeout(() => {
       console.log('Mensaje enviado (simulado):', this.form.value);
       this.status = 'sent';
@@ -58,12 +60,12 @@ location = 'Sevilla, España';
     const c = this.form.get(controlName);
     if (!c || !c.errors) return '';
 
-    if (c.errors['required']) return 'Este campo es obligatorio.';
-    if (c.errors['requiredTrue']) return 'Debes aceptar esta condición.';
-    if (c.errors['email']) return 'Introduce un email válido.';
+    if (c.errors['required']) return this.t.t('error_required');
+    if (c.errors['requiredTrue']) return this.t.t('error_required_true');
+    if (c.errors['email']) return this.t.t('error_email');
     if (c.errors['minlength']) return `Mínimo ${c.errors['minlength'].requiredLength} caracteres.`;
     if (c.errors['maxlength']) return `Máximo ${c.errors['maxlength'].requiredLength} caracteres.`;
 
-    return 'Valor no válido.';
+    return this.t.t('error_invalid');
   }
 }

@@ -1,24 +1,24 @@
 <section class="container my-5">
 
   <header class="text-center mb-4">
-    <h1 class="nombre">Proyectos</h1>
+    <h1 class="nombre">{{ t.t('footer_nav_projects') }}</h1>
     <p class="subtitulo muted">
-      Proyectos realizados durante el ciclo de Desarrollo de Aplicaciones Web (2º DAW).
+      {{ t.t('portfolio_subtitle') }}
     </p>
   </header>
 
   <section class="card fade-in">
 
     <p class="muted mb-4">
-      Aquí puedes ver mis proyectos destacados. En cada tarjeta incluyo las tecnologías utilizadas y el enlace al repositorio.
+      {{ t.t('portfolio_intro') }}
     </p>
 
-   <div class="row g-4">
-  <div class="col-12 col-md-6 col-lg-4"
-       *ngFor="let p of projects; trackBy: trackById">
-    <app-project-card [project]="p"></app-project-card>
-  </div>
-</div>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4"
+           *ngFor="let p of projects; trackBy: trackById">
+        <app-project-card [project]="p"></app-project-card>
+      </div>
+    </div>
   </section>
 
 </section>

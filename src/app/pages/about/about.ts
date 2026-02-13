@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'app-about',
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.css',
 })
 export class About {
-
+  t = inject(TranslateService);
   skills = [
     {
       icons: ['assets/images/html-5.png', 'assets/images/css-3.png'],

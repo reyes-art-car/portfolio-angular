@@ -4,14 +4,14 @@
   font-size: 2.3rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #e4f0ff;
+  color: var(--text, #e4f0ff);
   margin: 0 0 10px;
 }
 
 .subtitulo {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.1rem;
-  color: #b9c7ff;
+  color: var(--muted, #b9c7ff);
   margin-bottom: 25px;
 }
 
@@ -68,11 +68,12 @@
   font-family: "Space Grotesk", sans-serif;
   font-size: 2.3rem;
   letter-spacing: 0.05em;
-  color: #e0ecff;
+  color: var(--text, #e0ecff);
   margin-bottom: 40px;
   text-transform: none;
 }
-/*Perfil*/
+
+/* Perfil */
 .perfil-card {
   background: rgba(24, 26, 63, 0.85);
   border: 1px solid var(--border);
@@ -92,4 +93,27 @@
   font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 10px;
+}
+
+/* ─── MODO CLARO ─────────────────────────────────────────── */
+[data-theme="light"] .perfil-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(41, 121, 255, 0.2);
+}
+
+[data-theme="light"] .perfil-title {
+  text-shadow: none;
+}
+
+[data-theme="light"] .btn-cv {
+  background: rgba(0, 100, 200, 0.1);
+  border-color: rgba(0, 100, 200, 0.5);
+  color: #0050a0;
+}
+
+[data-theme="light"] .btn-cv:hover {
+  background: rgba(0, 100, 200, 0.2);
+  border-color: rgba(0, 100, 200, 0.9);
+  color: #003070;
+  box-shadow: 0 0 20px rgba(0, 100, 200, 0.3);
 }

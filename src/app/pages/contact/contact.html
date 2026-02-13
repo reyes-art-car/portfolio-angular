@@ -1,59 +1,85 @@
 <section id="contacto" class="container my-5">
-  <h2 class="section-title mb-4">Contacto</h2>
+  <h2 class="section-title mb-4">{{ t.t('contact_title') }}</h2>
 
   <div class="contact-wrap p-4 p-md-5">
-    <form class="row g-3" novalidate>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="row g-3" novalidate>
 
       <div class="col-12 col-md-6">
-        <label class="form-label" for="nombre">Nombre <span class="req">*</span></label>
-        <input id="nombre" type="text" class="form-control" placeholder="Tu nombre">
+        <label class="form-label" for="nombre">
+          {{ t.t('contact_name') }} <span class="req">*</span>
+        </label>
+        <input id="nombre" type="text" class="form-control"
+               formControlName="name"
+               [placeholder]="t.t('contact_name')"
+               [class.is-invalid]="isInvalid('name')">
+        <div class="text-danger mt-1" *ngIf="isInvalid('name')">{{ getError('name') }}</div>
       </div>
 
       <div class="col-12 col-md-6">
-        <label class="form-label" for="email">Email <span class="req">*</span></label>
-        <input id="email" type="email" class="form-control" placeholder="nombre@dominio.com">
+        <label class="form-label" for="email">
+          {{ t.t('contact_email') }} <span class="req">*</span>
+        </label>
+        <input id="email" type="email" class="form-control"
+               formControlName="email"
+               placeholder="nombre@dominio.com"
+               [class.is-invalid]="isInvalid('email')">
+        <div class="text-danger mt-1" *ngIf="isInvalid('email')">{{ getError('email') }}</div>
       </div>
 
       <div class="col-12 col-md-6">
-        <label class="form-label" for="asunto">Asunto <span class="req">*</span></label>
-        <input id="asunto" type="text" class="form-control" placeholder="Ej.: Oferta de prácticas / Colaboración">
+        <label class="form-label" for="asunto">
+          {{ t.t('contact_subject') }} <span class="req">*</span>
+        </label>
+        <input id="asunto" type="text" class="form-control"
+               formControlName="subject"
+               [placeholder]="t.t('contact_subject_placeholder')"
+               [class.is-invalid]="isInvalid('subject')">
+        <div class="text-danger mt-1" *ngIf="isInvalid('subject')">{{ getError('subject') }}</div>
       </div>
 
       <div class="col-12 col-md-6">
-        <label class="form-label" for="motivo">Motivo <span class="req">*</span></label>
-        <select id="motivo" class="form-select">
-          <option value="Trabajo">Trabajo</option>
-          <option value="Colaboración">Colaboración</option>
-          <option value="Consulta">Consulta</option>
+        <label class="form-label" for="motivo">
+          {{ t.t('contact_reason') }} <span class="req">*</span>
+        </label>
+        <select id="motivo" class="form-select" formControlName="reason">
+          <option value="Trabajo">{{ t.t('contact_reason_work') }}</option>
+          <option value="Colaboración">{{ t.t('contact_reason_collab') }}</option>
+          <option value="Consulta">{{ t.t('contact_reason_query') }}</option>
         </select>
       </div>
 
       <div class="col-12">
-        <label class="form-label" for="mensaje">Mensaje <span class="req">*</span></label>
+        <label class="form-label" for="mensaje">
+          {{ t.t('contact_message') }} <span class="req">*</span>
+        </label>
         <textarea id="mensaje" class="form-control" rows="7"
-          placeholder="Cuéntame tu propuesta con el máximo detalle posible..."></textarea>
+                  formControlName="message"
+                  [placeholder]="t.t('contact_message_placeholder')"
+                  [class.is-invalid]="isInvalid('message')"></textarea>
 
         <div class="d-flex justify-content-between mt-2">
-          <small class="form-text-muted">Mínimo 20 caracteres.</small>
-          <small class="form-text-muted">0 / 800</small>
+          <small class="form-text-muted">{{ t.t('contact_min_chars') }}</small>
+          <small class="form-text-muted">{{ form.get('message')?.value?.length ?? 0 }} / 800</small>
         </div>
 
-        <!-- Ejemplo error -->
-        <div class="text-danger mt-2">Este campo es obligatorio.</div>
+        <div class="text-danger mt-1" *ngIf="isInvalid('message')">{{ getError('message') }}</div>
       </div>
 
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="demoCheck">
+          <input class="form-check-input" type="checkbox"
+                 id="demoCheck" formControlName="accept"
+                 [class.is-invalid]="isInvalid('accept')">
           <label class="form-check-label" for="demoCheck">
-            Acepto que este formulario es de demostración (no envía emails reales).
+            {{ t.t('contact_accept') }}
           </label>
+          <div class="text-danger mt-1" *ngIf="isInvalid('accept')">{{ getError('accept') }}</div>
         </div>
       </div>
 
       <div class="col-12 d-flex gap-2">
-        <button type="submit" class="btn btn-primary px-4">Enviar</button>
-        <button type="reset" class="btn btn-outline-light px-4">Limpiar</button>
+        <button type="submit" class="btn btn-primary px-4">{{ t.t('contact_send') }}</button>
+        <button type="reset" class="btn btn-outline-light px-4">{{ t.t('contact_clear') }}</button>
       </div>
 
     </form>

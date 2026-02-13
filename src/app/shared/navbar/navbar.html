@@ -7,15 +7,16 @@
             data-bs-target="#mainNavbar"
             aria-controls="mainNavbar"
             aria-expanded="false"
-            aria-label="Mostrar navegación">
+            [attr.aria-label]="t.t('nav_toggle_aria')">
       <span class="navbar-toggler-icon"></span>
     </button>
-<button class="btn btn-sm btn-outline-light ms-2"
-        type="button"
-        (click)="toggleTheme()"
-        title="Cambiar tema">
-  <i class="bi bi-moon-stars"></i>
-</button>
+
+    <button class="btn btn-sm btn-outline-light ms-2"
+            type="button"
+            (click)="toggleTheme()"
+            [title]="t.t('nav_theme_title')">
+      <i class="bi bi-moon-stars"></i>
+    </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto gap-lg-2">
@@ -29,6 +30,16 @@
           </a>
         </li>
       </ul>
+
+      <!-- Selector de idioma -->
+      <div class="ms-lg-3 mt-2 mt-lg-0 d-flex gap-1">
+        <button class="btn btn-sm btn-outline-light"
+                (click)="t.setLang('es')"
+                [class.active]="t.currentLang() === 'es'">ES</button>
+        <button class="btn btn-sm btn-outline-light"
+                (click)="t.setLang('en')"
+                [class.active]="t.currentLang() === 'en'">EN</button>
+      </div>
     </div>
   </div>
 </nav>

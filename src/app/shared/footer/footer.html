@@ -7,31 +7,30 @@
     </p>
 
     <p class="footer-role mb-3">
-      Estudiante de Desarrollo de Aplicaciones Web
+      {{ t.t('footer_role') }}
     </p>
 
     <div class="footer-links mb-3">
-      <a routerLink="/">Inicio</a>
-      <a routerLink="/portfolio">Proyectos</a>
-      <a routerLink="/about">Sobre mí</a>
-      <a routerLink="/contact">Contacto</a>
+      <a routerLink="/">{{ t.t('footer_nav_home') }}</a>
+      <a routerLink="/portfolio">{{ t.t('footer_nav_projects') }}</a>
+      <a routerLink="/about">{{ t.t('footer_nav_about') }}</a>
+      <a routerLink="/contact">{{ t.t('footer_nav_contact') }}</a>
     </div>
- <div class="footer-social">
 
-  <a href="https://github.com/reyes-art-car"
-     target="_blank"
-     rel="noopener"
-     aria-label="GitHub">
-    <i class="bi bi-github"></i>
-  </a>
+    <div class="footer-social">
+      <a href="https://github.com/reyes-art-car"
+         target="_blank"
+         rel="noopener"
+         aria-label="GitHub">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="mailto:mariareyesartcar@gmail.com"
+         aria-label="Email">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+    </div>
 
-  <a href="mailto:mariareyesartcar@gmail.com"
-     aria-label="Email">
-    <i class="bi bi-envelope-fill"></i>
-  </a>
-
-</div>
-  <p class="footer-copy mb-0">© {{ year }} · MRAC Portfolio</p>
-</div>
-
+    <p class="footer-copy mb-0">© {{ year }} · MRAC Portfolio</p>
+  </div>
 </footer>
+</div>

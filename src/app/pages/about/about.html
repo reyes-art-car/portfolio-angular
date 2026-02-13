@@ -3,66 +3,58 @@
     <div class="col-12 col-md-10 col-lg-8">
 
       <article class="card sobre-card p-4 p-md-5">
-        <h1 class="sobre-title">Sobre mí</h1>
+        <h1 class="sobre-title">{{ t.t('about_title') }}</h1>
 
-        <p>
-          ¡Hola! Soy <strong>Maria Reyes Artacho Carrero</strong>, estudiante de desarrollo web con el objetivo de convertirme en <strong>backend developer</strong>.
-          Me apasiona la lógica, el diseño de APIs y cómo funcionan las aplicaciones por dentro.
-        </p>
+        <p>{{ t.t('about_p1') }}</p>
 
-        <p>
-          A nivel personal, me considero una persona <strong>curiosa</strong>, con gran capacidad de <strong>adaptación</strong> y siempre con ganas de aprender cosas nuevas.
-          Disfruto enfrentándome a retos y buscando <strong>soluciones creativas</strong> a los problemas.
-        </p>
+        <p>{{ t.t('about_p2') }}</p>
 
-        <p>
-          En mi portafolio encontrarás una selección de mis proyectos más destacados.
-          ¡Gracias por visitar mi sitio!
-        </p>
+        <p>{{ t.t('about_p3') }}</p>
 
         <p class="tecnologias">
-          <strong>Tecnologías:</strong> HTML, CSS, JavaScript, Angular, Java/Spring Boot, SQL y Git.
+          <strong>{{ t.t('about_tech') }}</strong> HTML, CSS, JavaScript, Angular, Java/Spring Boot, SQL y Git.
         </p>
 
-        <a routerLink="/home" class="btn btn-mrac mt-3">Volver al inicio</a>
+        <a routerLink="/home" class="btn btn-mrac mt-3">{{ t.t('about_back_btn') }}</a>
       </article>
 
     </div>
   </div>
 </main>
+
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
 
       <article class="card-mrac cv-card text-center">
-        <h2 class="section-title">Currículum</h2>
+        <h2 class="section-title">{{ t.t('about_cv_title') }}</h2>
 
-        <p>
-          Puedes consultar mi currículum completo en PDF.
-        </p>
-<a href="assets/doc/CV_Maria_Reyes_Artacho_Carrero.pdf" rel="noopener"
-   target="_blank"
-   class="btn-mrac">
-  Ver currículum (PDF)
-</a>
+        <p>{{ t.t('about_cv_text') }}</p>
+
+        <a href="assets/doc/CV_Maria_Reyes_Artacho_Carrero.pdf" rel="noopener"
+           target="_blank"
+           class="btn-mrac">
+          {{ t.t('about_cv_btn') }}
+        </a>
       </article>
 
     </div>
   </div>
 </section>
+
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8">
 
       <article class="card-mrac text-center p-4">
-        <h2 class="section-title">Vídeo de presentación</h2>
+        <h2 class="section-title">{{ t.t('about_video_title') }}</h2>
 
         <div class="ratio ratio-16x9 mt-3">
           <video controls preload="metadata" poster="assets/images/Portada-video.png">
             <source src="assets/video/presentacion.webm" type="video/webm">
             <source src="assets/video/presentacion.mp4" type="video/mp4">
             <source src="assets/video/presentacion.ogv" type="video/ogg">
-            Tu navegador no soporta el elemento de vídeo.
+            {{ t.t('about_video_fallback') }}
           </video>
         </div>
 
@@ -73,11 +65,11 @@
 </section>
 
 <section id="formacion" class="container my-5">
-  <h2 class="section-title">Formación</h2>
+  <h2 class="section-title">{{ t.t('about_formation_title') }}</h2>
 
   <section class="card-mrac">
     <h2 class="section-title">
-      Certificaciones y habilidades técnicas
+      {{ t.t('about_certs_title') }}
     </h2>
 
     <div class="row g-4">
@@ -107,4 +99,3 @@
     </div>
   </section>
 </section>
-

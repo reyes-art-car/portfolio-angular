@@ -45,7 +45,6 @@
   margin-bottom: 18px;
 }
 
-/* Contenedor principal (tu card-mrac) */
 #formacion .card-mrac {
   background: rgba(17, 20, 51, 0.70);
   border: 1px solid rgba(39, 42, 85, 0.95);
@@ -54,7 +53,6 @@
   box-shadow: 0 0 22px rgba(41, 121, 255, 0.16);
 }
 
-/* Tarjeta individual de cada skill */
 #formacion .cert-card {
   height: 100%;
   background: rgba(5, 8, 25, 0.35);
@@ -71,7 +69,6 @@
   border-color: rgba(77, 208, 255, 0.45);
 }
 
-/* Iconos: tamaño uniforme y centrado */
 #formacion .cert-icons {
   height: 110px;
   display: flex;
@@ -89,7 +86,6 @@
   filter: drop-shadow(0 0 10px rgba(77, 208, 255, 0.15));
 }
 
-/* Título y texto legibles */
 #formacion .cert-card h3 {
   color: #ffffff;
   margin: 6px 0 10px 0;
@@ -113,12 +109,69 @@
   .sobre-title { font-size: 1.3rem; }
   .sobre-card p { font-size: 1rem; }
 
-  #formacion .cert-icons {
-    height: 96px;
-  }
+  #formacion .cert-icons { height: 96px; }
 
   #formacion .cert-icons img {
     width: 64px;
     height: 64px;
   }
+}
+
+
+/* MODO CLARO  */
+
+[data-theme="light"] .sobre-card,
+[data-theme="light"] .card.sobre-card {
+  background: #ffffff !important;
+  border: 2px solid rgba(0, 120, 200, 0.35) !important;
+  box-shadow:
+    0 0 20px rgba(0, 120, 200, 0.15),
+    0 0 40px rgba(0, 100, 180, 0.08);
+  color: #0d1b2a !important;
+}
+
+[data-theme="light"] .sobre-title {
+  color: #0a4f8a !important;
+}
+
+[data-theme="light"] .sobre-card p {
+  color: #0d1b2a !important;
+}
+
+[data-theme="light"] .sobre-card strong {
+  color: #0a3d6e !important;
+}
+
+[data-theme="light"] .sobre-card .tecnologias {
+  color: #0a4f8a !important;
+}
+
+[data-theme="light"] #formacion .section-title {
+  color: #1a2a4a;
+}
+
+[data-theme="light"] #formacion .card-mrac {
+  background: rgba(240, 245, 255, 0.9);
+  border: 1px solid rgba(0, 120, 200, 0.2);
+  box-shadow: 0 0 22px rgba(0, 100, 200, 0.1);
+}
+
+[data-theme="light"] #formacion .cert-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 120, 200, 0.2);
+  box-shadow: 0 0 18px rgba(0, 100, 200, 0.08);
+}
+
+[data-theme="light"] #formacion .cert-card:hover {
+  box-shadow: 0 18px 30px rgba(0, 80, 160, 0.15);
+  border-color: rgba(0, 120, 200, 0.45);
+}
+
+[data-theme="light"] #formacion .cert-card h3 {
+  color: #1a2a4a;
+}
+
+[data-theme="light"] #formacion .cert-card p,
+[data-theme="light"] #formacion .cert-card .muted {
+  color: #3a4a6a;
 }

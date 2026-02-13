@@ -2,12 +2,12 @@
 <header class="hero text-center card fade-in">
   <h1 class="nombre">REYES ARTACHO CARRERO</h1>
   <p class="subtitulo muted">
-    Estudiante de Desarrollo de Aplicaciones Web
+    {{ t.t('home_subtitle') }}
   </p>
 
   <div class="mt-3">
     <a routerLink="/portfolio" class="btn btn-outline-light">
-      Ver mis proyectos
+      {{ t.t('home_btn_projects') }}
     </a>
   </div>
 </header>
@@ -15,35 +15,35 @@
 
 <!-- SOBRE MÍ stickers -->
 <section class="stickers-sobre-mi card fade-in my-5">
-  <h2 class="text-center mb-3">Un poco sobre mí</h2>
+  <h2 class="text-center mb-3">{{ t.t('home_stickers_title') }}</h2>
 
   <p class="text-center muted mb-4">
-    Pasa el ratón por encima de cada imagen para saber más sobre mí.
+    {{ t.t('home_stickers_hint') }}
   </p>
 
   <div class="d-flex justify-content-center flex-wrap gap-4">
 
     <button type="button"
             class="sticker-img"
-            title="Como una mariposa, trato con delicadeza cada proyecto.">
+            [title]="t.t('home_sticker_mariposa')">
       <img src="assets/images/mariposa.png" alt="Mariposa azul">
     </button>
 
     <button type="button"
             class="sticker-img"
-            title="Avanzo con paciencia y perseverancia.">
+            [title]="t.t('home_sticker_tortuga')">
       <img src="assets/images/tortuga.png" alt="Tortuga">
     </button>
 
     <button type="button"
             class="sticker-img"
-            title="Aporto creatividad e ideas nuevas.">
+            [title]="t.t('home_sticker_jazmin')">
       <img src="assets/images/jazmin.png" alt="Jazmín">
     </button>
 
     <button type="button"
             class="sticker-img"
-            title="Busco impacto social en los proyectos.">
+            [title]="t.t('home_sticker_corazon')">
       <img src="assets/images/corazon.png" alt="Corazón">
     </button>
 
@@ -51,17 +51,15 @@
 </section>
 
 
-<!-- Orientación profesional-->
+<!-- Orientación profesional -->
 <section class="perfil-card card fade-in my-5 text-center">
-  <h2 class="perfil-title">Perfil</h2>
+  <h2 class="perfil-title">{{ t.t('home_profile_title') }}</h2>
 
   <p class="perfil-text">
-    Actualmente curso 2º de Desarrollo de Aplicaciones Web.
-    En cuanto a mi perfil, estoy orientada a la parte backend, concretamente a Java y Spring Boot, aunque también tengo experiencia con Angular en el frontend.
+    {{ t.t('home_profile_p1') }}
   </p>
 
   <p class="perfil-text">
-    Tengo gran capacidad de aprendizaje, ya que poseo un Grado en Educación Primaria y un máster en Enseñanza de Lengua Inglesa. Además poseo un título C1 en Cambridge con lo que tengo gran dominio del inglés. Busco prácticas y oportunidades junior donde seguir aprendiendo
-    y aportar valor con proyectos reales.
+    {{ t.t('home_profile_p2') }}
   </p>
 </section>

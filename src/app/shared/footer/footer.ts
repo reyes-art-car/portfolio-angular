@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component,inject } from '@angular/core';
+import { ThemeService } from '../../services/theme';
+import { TranslateService } from '../../services/translate.service';
 @Component({
   selector: 'app-footer',
   imports: [],
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 })
 
 export class Footer {
+  t= inject(TranslateService);
   year = new Date().getFullYear();
 }
 

@@ -1,40 +1,31 @@
-<header class="hero">
-  <div class="container text-center py-4">
-    <h1 class="nombre">REYES ARTACHO CARRERO</h1>
-    <p class="subtitulo">Estudiante de Desarrollo de Aplicaciones Web</p>
+<section class="container my-5">
+
+  <header class="text-center mb-4">
+    <h1 class="nombre">Proyectos</h1>
+    <p class="subtitulo muted">
+      Proyectos realizados durante el ciclo de Desarrollo de Aplicaciones Web (2º DAW).
+    </p>
+  </header>
+
+  <section class="card fade-in">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+      <h2 class="mb-0">Listado de proyectos</h2>
+
+      <a routerLink="/contacto" class="cv-link">
+        Contacto
+      </a>
+    </div>
+
+    <p class="muted mb-4">
+      Aquí puedes ver mis proyectos destacados. En cada tarjeta incluyo las tecnologías utilizadas y el enlace al repositorio.
+    </p>
+
+   <div class="row g-4">
+  <div class="col-12 col-md-6 col-lg-4"
+       *ngFor="let p of projects; trackBy: trackById">
+    <app-project-card [project]="p"></app-project-card>
   </div>
-</header>
+</div>
+  </section>
 
-<!-- SOBRE MÍ stickers -->
-<section class="stickers-sobre-mi container my-5">
-  <h2 class="text-center mb-4">Un poco sobre mí</h2>
-  <p class="text-center">
-    Pasa el ratón por encima de cada imagen para saber más sobre mí.
-  </p>
-
-  <div class="d-flex justify-content-center flex-wrap gap-4">
-    <button type="button"
-            class="sticker-img"
-            title="Como una mariposa, trato con delicadeza cada proyecto.">
-      <img src="assets/images/mariposa.png" alt="Mariposa azul">
-    </button>
-
-    <button type="button"
-            class="sticker-img"
-            title="Avanzo con paciencia y perseverancia.">
-      <img src="assets/images/tortuga.png" alt="Tortuga">
-    </button>
-
-    <button type="button"
-            class="sticker-img"
-            title="Aporto creatividad e ideas nuevas.">
-      <img src="assets/images/jazmin.png" alt="Jazmín">
-    </button>
-
-    <button type="button"
-            class="sticker-img"
-            title="Busco impacto social en los proyectos.">
-      <img src="assets/images/corazon.png" alt="Corazón">
-    </button>
-  </div>
 </section>
